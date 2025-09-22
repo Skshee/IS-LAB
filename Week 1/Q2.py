@@ -21,11 +21,43 @@ def vigenere_decrypt(ciphertext, key):
         plaintext += chr(x)
     return plaintext
 
+def AutokeyEncrypt(plaintext, key):
+    plaintext = plaintext.replace(" ", "").upper()
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+    key_letter = alphabet[key % 26]
+    keystream = key_letter + plaintext
+    ciphertext = ""
+
+    for i in range(len(plaintext)):
+        p = alphabet.index(plaintext[i])
+        k = alphabet.index(keystream[i])
+        c = (p + k) % 26
+        ciphertext += alphabet[c]
+    return ciphertext
+
+def AutokeyDecrypt(ciphertext, key):
+    ciphertext = ciphertext.upper()
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    key_letter = alphabet[key % 26]
+    keystream = key_letter
+    plaintext = ""
+
+    for i in range(len(ciphertext)):
+        c = alphabet.index(ciphertext[i])
+        k = alphabet.index(keystream[i])
+        p = (c - k + 26) % 26
+        plain_char = alphabet[p]
+        plaintext += plain_char
+        keystream += plain_char
+    return plaintext
+
 
 plaintext = "thehouseisbeingsoldtonight"
 ciphertext = vigenere_encrypt(plaintext, "dollars")
 print("Vigenere Encrypt : " + vigenere_encrypt(plaintext, "dollars"))
 print("Vigenere decrypt : " + vigenere_decrypt(ciphertext, "dollars"))
+
 
 
 
