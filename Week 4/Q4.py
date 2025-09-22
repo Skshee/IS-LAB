@@ -1,3 +1,15 @@
+'''
+Design and implement a secure file transfer system using RSA (2048-bit) and ECC
+(secp256r1 curve) public key algorithms. Generate and exchange keys, then
+encrypt and decrypt files of varying sizes (e.g., 1 MB, 10 MB) using both
+algorithms. Measure and compare the performance in terms of key generation
+time, encryption/decryption speed, and computational overhead. Evaluate the
+security and efficiency of each algorithm in the context of file transfer, considering
+factors such as key size, storage requirements, and resistance to known attacks.
+Document your findings, including performance metrics and a summary of the
+strengths and weaknesses of RSA and ECC for secure file transfer. 
+'''
+
 import time
 import os
 from Crypto.PublicKey import RSA, ECC
@@ -84,4 +96,5 @@ if __name__ == "__main__":
     benchmark_encryption("test_10mb.bin", "RSA")
 
     benchmark_encryption("test_1mb.bin", "ECC")
+
     benchmark_encryption("test_10mb.bin", "ECC")
