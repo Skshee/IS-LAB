@@ -1,3 +1,10 @@
+'''
+Design a Python-based experiment to analyze the performance of MD5, SHA-1, and
+SHA-256 hashing techniques in terms of computation time and collision resistance.
+Generate a dataset of random strings ranging from 50 to 100 strings, compute the hash
+values using each hashing technique, and measure the time taken for hash computation.
+Implement collision detection algorithms to identify any collisions within the hashed
+'''
 import hashlib
 import random
 import string
@@ -73,4 +80,5 @@ def run_experiment():
 
 # Run it
 if __name__ == "__main__":
+
     run_experiment()
