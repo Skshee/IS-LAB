@@ -1,3 +1,12 @@
+'''
+Using socket programming in Python, demonstrate the application of hash functions
+for ensuring data integrity during transmission over a network. Write server and client
+scripts where the server computes the hash of received data and sends it back to the
+client, which then verifies the integrity of the data by comparing the received hash with
+the locally computed hash. Show how the hash verification detects data corruption
+or tampering during transmission.
+'''
+
 import socket
 import threading
 import hashlib
@@ -53,4 +62,5 @@ def client_thread(simulate_corruption=False):
 # Run both threads
 if __name__ == "__main__":
     threading.Thread(target=server_thread).start()
+
     threading.Thread(target=client_thread, args=(False,)).start()  # Change to True to simulate tampering
