@@ -1,3 +1,8 @@
+'''
+Encrypt the message "Confidential Data" using DES with the following key:
+"A1B2C3D4". Then decrypt the ciphertext to verify the original message.
+'''
+
 from Crypto.Cipher import DES
 import base64
 
@@ -16,4 +21,5 @@ iv = decoded_data[:8]
 ciphertext = decoded_data[8:]
 decipher = DES.new(key, DES.MODE_OFB, iv=iv)
 decrypted = decipher.decrypt(ciphertext)
+
 print("Decrypted:", decrypted.decode('utf-8'))
