@@ -1,3 +1,9 @@
+'''
+Encrypt the message "Classified Text" using Triple DES with the key
+"1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF". Then
+decrypt the ciphertext to verify the original message.
+'''
+
 from Crypto.Cipher import DES3
 from Crypto import Random
 from Crypto.Util.Padding import pad, unpad
@@ -27,3 +33,4 @@ decrypted_text = unpad(decrypted_padded_text, DES3.block_size)
 
 print("Encrypted:", encrypted_text)
 print("Decrypted:", decrypted_text.decode('utf-8'))
+
