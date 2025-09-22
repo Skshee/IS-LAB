@@ -1,3 +1,9 @@
+'''
+Using ECC (Elliptic Curve Cryptography), encrypt the message "Secure
+Transactions" with the public key. Then decrypt the ciphertext with the private key
+to verify the original message. 
+'''
+
 from Crypto.PublicKey import ECC
 from Crypto.Cipher import AES
 from Crypto.Hash import SHA256
@@ -54,4 +60,5 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()
