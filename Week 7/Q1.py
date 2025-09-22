@@ -1,3 +1,7 @@
+'''
+Try using the Elgammal, Schnor asymmetric encryption standard and verify the above
+steps. 
+'''
 import random
 
 # Extended Euclidean Algorithm for finding modular inverse
@@ -81,3 +85,4 @@ print(f"Encrypted Message: c1 = {c1}, c2 = {c2}")
 # Decrypt the message
 decrypted_message = decrypt(private_key, p, c1, c2)
 print(f"Decrypted Message: {decrypted_message}")
+
