@@ -1,3 +1,9 @@
+'''
+Compare the encryption and decryption times for DES and AES-256 for the
+message "Performance Testing of Encryption Algorithms". Use a standard
+implementation and report your findings.
+'''
+
 # Q3: DES vs AES-256 timing comparison
 from Crypto.Cipher import DES, AES
 from Crypto.Util.Padding import pad
